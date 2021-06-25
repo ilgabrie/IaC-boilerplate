@@ -62,18 +62,18 @@ steps:
 #############################
 #Comment all the steps, and uncomment this one if you wan to delete all the resources created in your project.
 # [START tf destroy]
-- id: 'tf destroy'
-  name: 'hashicorp/terraform:latest'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-      echo "***********************"
-      echo "$BRANCH_NAME" Destroy
-      echo "***********************"
-      cd environments/$BRANCH_NAME
-      terraform init  
-      terraform destroy -auto-approve    
+#- id: 'tf destroy'
+#  name: 'hashicorp/terraform:latest'
+#  entrypoint: 'sh'
+#  args: 
+#  - '-c'
+#  - | 
+#      echo "***********************"
+#      echo "$BRANCH_NAME" Destroy
+#      echo "***********************"
+#      cd environments/$BRANCH_NAME
+#      terraform init  
+#      terraform destroy -auto-approve    
 # [END sh-config]    
 
 

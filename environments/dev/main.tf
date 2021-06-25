@@ -1,6 +1,6 @@
 # Terraform configuration goes here
 provider "google" {
-  credentials = file("/home/admin/ilgabrie/paas-bigdata-terraform-key.json")
+#  credentials = file("/home/admin/ilgabrie/paas-bigdata-terraform-key.json")
   project = var.project
   region  = var.region
   zone    = var.zone
