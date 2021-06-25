@@ -92,7 +92,7 @@ resource "google_dataproc_cluster" "mydataproc" {
       service_account_scopes = [
         "https://www.googleapis.com/auth/monitoring",
         "useraccounts-ro",
-        "storage-rw",
+        "storage-full",
         "logging-write",
       ]
       network    = google_compute_network.dataproc_network.name
