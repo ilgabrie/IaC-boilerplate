@@ -60,7 +60,7 @@ steps:
 #############################
 # DANGER ZONE 
 #############################
- Comment all the steps, and uncomment this one if you wan to delete all the resources created in your project.
+#Comment all the steps, and uncomment this one if you wan to delete all the resources created in your project.
 # [START tf destroy]
 - id: 'tf destroy'
   name: 'hashicorp/terraform:latest'
