@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "ctic-classes"
-    prefix = "terraform/master"
+    bucket = "terraform-bigdata"
+    prefix = "terraform"
   }
 }

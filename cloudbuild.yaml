@@ -25,7 +25,7 @@ steps:
 
 ## [START tf-init]
 - id: 'tf init'
-  name: 'hashicorp/terraform:0.12.9'
+  name: 'hashicorp/terraform:latest'
   entrypoint: 'sh'
   args: 
   - '-c'
@@ -36,7 +36,7 @@ steps:
 
 # [START tf-plan]
 - id: 'tf plan'
-  name: 'hashicorp/terraform:0.12.9'
+  name: 'hashicorp/terraform:latest'
   entrypoint: 'sh'
   args: 
   - '-c'
@@ -47,7 +47,7 @@ steps:
 
 ## [START tf-apply]
 - id: 'tf apply'
-  name: 'hashicorp/terraform:0.12.9'
+  name: 'hashicorp/terraform:latest'
   entrypoint: 'sh'
   args: 
   - '-c'
@@ -63,7 +63,7 @@ steps:
 # Comment all the steps, and uncomment this one if you wan to delete all the resources created in your project.
 ## [START tf destroy]
 #- id: 'tf destroy'
-#  name: 'hashicorp/terraform:0.12.9'
+#  name: 'hashicorp/terraform:latest'
 #  entrypoint: 'sh'
 #  args: 
 #  - '-c'

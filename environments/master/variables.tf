@@ -4,17 +4,17 @@ variable "project" {
 
 variable "location" {
   type = string
-  default = "US"
+  default = "EU"
 }
 
 variable "region" {
   type = string
-  default = "us-central1"
+  default = "europe-west3"
 }
 
 variable "zone" {
   type = string
-  default = "us-central1-a"
+  default = "europe-west3-b"
 }
 
 # Either implicitly by using a default value of empty brackets:
@@ -26,7 +26,7 @@ variable "environment" {
 }
 
 variable "machine_types" {
-  type = "map"
+  type = map
   default = {
     "worker" = "n1-standard-2"
     "master" = "n1-standard-2"
@@ -35,7 +35,7 @@ variable "machine_types" {
 }
 
 variable "disk_type" {
-  type = "map"
+  type = map
   default = {
     "worker" = "pd-standard"
     "master" = "pd-standard"
@@ -49,7 +49,7 @@ variable "disk_image" {
  }
 
 variable "disk_size" {
-  type = "map"
+  type = map
   default = {
     "worker" = 100
     "master" = 100
@@ -57,7 +57,7 @@ variable "disk_size" {
 }
 
 variable "count_server" {
-  type = "map"
+  type = map
   default = {
     "worker" = 2
     "master" = 1
