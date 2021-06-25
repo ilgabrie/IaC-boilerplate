@@ -96,7 +96,7 @@ resource "google_dataproc_cluster" "mydataproc" {
         "logging-write",
       ]
       network    = google_compute_network.dataproc_network.name
-      #service_account = var.service_account #optional if you want to choose a service account
+      service_account = var.service_account #optional if you want to choose a service account
     }
 
     # You can define multiple initialization_action blocks
