@@ -49,6 +49,7 @@ resource "google_dataproc_workflow_template" "dev_template" {
       config {
         gce_cluster_config {
           zone = "europe-west3-b"
+          network = data.google_compute_network.dataproc_network.name  
         }
         master_config {
           num_instances = 1
@@ -59,7 +60,7 @@ resource "google_dataproc_workflow_template" "dev_template" {
           }
         }
         software_config {
-          image_version = "2.0.11-debian10"
+          image_version = "2.0.12-debian10"
         }
       }
     }
