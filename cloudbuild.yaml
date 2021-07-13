@@ -35,14 +35,14 @@ steps:
 ## [END tf-init]
 
 # [START tf-plan]
-- id: 'tf plan'
-  name: 'hashicorp/terraform:latest'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-      cd environments/$BRANCH_NAME
-      terraform plan
+#- id: 'tf plan'
+#  name: 'hashicorp/terraform:latest'
+#  entrypoint: 'sh'
+#  args: 
+#  - '-c'
+#  - | 
+#      cd environments/$BRANCH_NAME
+#      terraform plan
 ## [END tf-plan]
 
 # [START tf-apply]
