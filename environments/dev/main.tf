@@ -1,6 +1,6 @@
 # Terraform configuration goes here
 provider "google" {
-#  credentials = file("/home/admin/ilgabrie/paas-bigdata-terraform-key.json")
+  credentials = file("/home/admin/ilgabrie/paas-bigdata-terraform-key.json")
   project = var.project
   region  = var.region
   zone    = var.zone
@@ -28,6 +28,12 @@ resource "random_id" "instance_id" {
 #  disable_on_destroy = false
 #}
 
+resource "google_storage_bucket_object" "job_script" {
+  name   = "scripts/bigquery_out.py"
+  source = "../../job_scripts/bigquery_out.py"
+  bucket = "tsi-ucf-data"
+}
+
 ####################################################################################
 # Networking
 ####################################################################################
@@ -41,7 +47,7 @@ data "google_compute_network" "dataproc_network" {
 ###################################################################################
 
 resource "google_dataproc_workflow_template" "dev_template" {
-  name = "dev-template"
+  name = terraform.workspace == "default" ? "automate_run" : "manual_run"
   location = "europe-west3"
   placement {
     managed_cluster {
@@ -68,7 +74,7 @@ resource "google_dataproc_workflow_template" "dev_template" {
   jobs {
     step_id = "dev-job"
     pyspark_job {
-      main_python_file_uri = "gs://tsi-ucf-data/scripts/test_bigquery.py"
+      main_python_file_uri = "gs://tsi-ucf-data/scripts/bigquery_out.py"
       jar_file_uris = ["gs://spark-lib/bigquery/spark-bigquery-latest_2.12.jar"]
     }
   }
