@@ -45,16 +45,16 @@ steps:
       terraform plan
 ## [END tf-plan]
 
-## [START tf-apply]
-#- id: 'tf apply'
-#  name: 'hashicorp/terraform:latest'
-#  entrypoint: 'sh'
-#  args: 
-#  - '-c'
-#  - | 
-#      cd environments/$BRANCH_NAME      
-#      terraform apply -auto-approve
-#  timeout: 2000s
+# [START tf-apply]
+- id: 'tf apply'
+  name: 'hashicorp/terraform:latest'
+  entrypoint: 'sh'
+  args: 
+  - '-c'
+  - | 
+      cd environments/$BRANCH_NAME      
+      terraform apply -auto-approve
+  timeout: 2000s
 # [END tf-apply]      
 
 #############################
